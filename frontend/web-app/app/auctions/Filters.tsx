@@ -1,4 +1,4 @@
-import { useParamStore } from '@/hooks/useAuctionStore';
+import { useParamsStore } from '@/hooks/useParamsStore';
 import { Button } from 'flowbite-react';
 import React from 'react';
 import { AiOutlineClockCircle, AiOutlineSortAscending } from 'react-icons/ai';
@@ -20,10 +20,10 @@ const filterButons = [
 ];
 
 export default function Filters() {
-  const pageSize = useParamStore((state) => state.pageSize);
-  const setParams = useParamStore((state) => state.setParams);
-  const orderBy = useParamStore((state) => state.orderBy);
-  const filterBy = useParamStore((state) => state.filterBy);
+  const pageSize = useParamsStore((state) => state.pageSize);
+  const setParams = useParamsStore((state) => state.setParams);
+  const orderBy = useParamsStore((state) => state.orderBy);
+  const filterBy = useParamsStore((state) => state.filterBy);
 
   return (
     <div className="flex justify-between items-center mb-4">

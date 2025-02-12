@@ -8,6 +8,8 @@ type State = {
   searchValue: string;
   orderBy: string;
   filterBy: string;
+  seller?: string;
+  winner?: string;
 };
 
 type Auctions = {
@@ -24,9 +26,11 @@ const initialState: State = {
   searchValue: '',
   orderBy: 'make',
   filterBy: 'live',
+  seller: undefined,
+  winner: undefined,
 };
 
-export const useParamStore = create<State & Auctions>()((set) => ({
+export const useParamsStore = create<State & Auctions>()((set) => ({
   ...initialState,
   setParams: (newParams: Partial<State>) => {
     set((state) => {

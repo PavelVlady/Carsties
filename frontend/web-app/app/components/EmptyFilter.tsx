@@ -3,7 +3,7 @@
 import React from 'react';
 import Heading from './Heading';
 import { Button } from 'flowbite-react';
-import { useParamStore } from '@/hooks/useAuctionStore';
+import { useParamsStore } from '@/hooks/useParamsStore';
 import { signIn } from 'next-auth/react';
 
 type Props = {
@@ -21,7 +21,7 @@ export default function EmptyFilter({
   showLogin,
   callbackUrl,
 }: Props) {
-  const reset = useParamStore((state) => state.reset);
+  const reset = useParamsStore((state) => state.reset);
 
   return (
     <div className="h-[40vh] flex flex-col gap-2 justify-center items-center shadow-lg">

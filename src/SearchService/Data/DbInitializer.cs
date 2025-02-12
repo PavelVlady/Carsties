@@ -26,6 +26,10 @@ public class DbInitializer
         var httpClient = scope.ServiceProvider.GetRequiredService<AuctionSvcHttpClient>();
 
         var items = await httpClient.GetItemsForSearchDb();
+        // var itemsData = File.ReadAllText("Data/auctions.json");
+        // var options = new JsonSerializerOptions{PropertyNameCaseInsensitive = true};
+        // var items = JsonSerializer.Deserialize<List<Item>>(itemsData, options);
+
 
         Console.WriteLine(items.Count + " returned from the auction service");
 
